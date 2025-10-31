@@ -1,0 +1,12 @@
+.animFbF {
+
+}
+
+.movingBlock {
+    display: inline-block;
+    background-image: linear-gradient(135deg, #646cff, #d053f2);
+    color: white;
+    padding: 1em 2em;
+    border-radius: 1em;
+    min-width: 125px;
+}

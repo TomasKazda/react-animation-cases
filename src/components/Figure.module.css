@@ -1,0 +1,10 @@
+.figure {
+    user-select: none;
+    cursor: pointer;
+    padding: 1.6em;
+    border-radius: 50%;
+    background-color: #c5a5cb;
+    position: absolute;
+    transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
