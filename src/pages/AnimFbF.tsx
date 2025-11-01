@@ -18,9 +18,9 @@ import style from "./AnimFbF.module.css"
 const AnimFbF: React.FC = () => {
     const animationIdRef = useRef<number>(0);
     const element = useRef<HTMLDivElement | null>(null);
-    let start = 0;
 
     useLayoutEffect(() => {
+        let start = 0;
         const animate = (timestamp: number) => {
             if (start === 0) start = timestamp;
 

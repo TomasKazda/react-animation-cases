@@ -1,30 +1,28 @@
+import { useRef } from "react";
 import style from "./Figure.module.css"
 
 type FigureProps = {
-    field: number,
     callbackEnd: () => void;
+    field?: number,
 }
 
-const Figure: React.FC<FigureProps> = ({ field, callbackEnd }) => {
-    const handlePosition = (field: number) => {
-        // abraka dabra new position
-        if (field > 0)
-            return { x: 200, y: 100 };
-        else
-            return { x: -100, y: -50 };
-    }
-    const position = handlePosition(field);
+const Figure: React.FC<FigureProps> = ({ callbackEnd, field = 0 }) => {
+    const transitionsCompleted = useRef(new Set<string>());
 
     const handleTransitionEnd = (event: React.TransitionEvent) => {
-        if (event.propertyName === 'transform') {
-            callbackEnd();
+        transitionsCompleted.current.add(event.propertyName);
+
+        if (transitionsCompleted.current.has('left') && 
+            transitionsCompleted.current.has('top')) {
+                transitionsCompleted.current.clear();
+                callbackEnd();
         }
     }
 
     return (
         <div
-            className={style.figure}
-            style={{ transform: `translate(${position.x}px, ${position.y}px)` }}
+            className={style.figure + " " + style["pos"+field]}
+            // style={{ left: `${position.x}%`, top: `${position.y}%` }}
             onTransitionEnd={handleTransitionEnd}
         >🔴</div>
     );

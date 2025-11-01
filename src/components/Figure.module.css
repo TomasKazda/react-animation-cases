@@ -5,6 +5,15 @@
     border-radius: 50%;
     background-color: #c5a5cb;
     position: absolute;
-    transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
+    transition: left 2s cubic-bezier(0.4, 0, 0.2, 1), top 1s ease-in-out;
+    will-change: left, top;
+}
+
+.pos0 {
+    left: 5%;
+    top: 10%;
+}
+.pos1 {
+    left: 90%;
+    top: 80%;
 }
