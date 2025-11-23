@@ -4,8 +4,10 @@ import Closure from "./pages/Closure"
 import ClosureEffect from "./pages/ClosureEffect"
 import AnimFbF from "./pages/AnimFbF";
 import AnimCSSEvent from "./pages/AnimCSSEvent";
+import AnimrAFKonva from './pages/AnimrAF';
+import AnimrAFCanvas from './pages/AnimrAFCanvas';
 
-type PageType = "Closure" | "ClosureEffect" | "AnimFbF" | "AnimCSS";
+type PageType = "Closure" | "ClosureEffect" | "AnimFbF" | "AnimCSS" | "AnimrAFKonva" | "AnimrAFCanvas";
 
 function App() {
   const [page, setPage] = useState<PageType>("Closure");
@@ -17,7 +19,9 @@ function App() {
         }}>
           <option value={"Closure"}>Closure (raw)</option>
           <option value={"ClosureEffect"}>useEffect - closure</option>
-          <option value={"AnimFbF"}>Frame-by-frame animation</option>
+          <option value={"AnimFbF"}>rAF Frame-by-frame animation</option>
+          <option value={"AnimrAFKonva"}>rAF Konva</option>
+          <option value={"AnimrAFCanvas"}>rAF Canvas</option>
           <option value={"AnimCSS"}>CSS animation</option>
         </select>
       </div>
@@ -34,6 +38,12 @@ function App() {
           :
           page === "AnimCSS" ?
             <AnimCSSEvent />
+          :
+          page === "AnimrAFKonva" ?
+            <AnimrAFKonva />
+          :
+          page === "AnimrAFCanvas" ?
+            <AnimrAFCanvas />
           :
             <div>empty</div>
         }
