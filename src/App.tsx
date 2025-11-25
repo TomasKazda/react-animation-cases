@@ -15,7 +15,7 @@ function App() {
     <>
       <div className={style.selPage}>
         <select onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
-          setPage(e.currentTarget.selectedOptions[0].value as PageType || "Closure");
+          setPage(e.currentTarget.selectedOptions[0].value as PageType || "AnimrAFKonva");
         }}>
           <option value={"Closure"}>Closure (raw)</option>
           <option value={"ClosureEffect"}>useEffect - closure</option>

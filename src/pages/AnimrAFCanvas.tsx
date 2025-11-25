@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useLayoutEffect } from 'react';
+import React, { useRef, useState, useLayoutEffect } from 'react';
 import basketImgSrc from '../assets/basket.svg';
 
 const WIDTH = 400;
@@ -23,7 +23,7 @@ const isColliding = (
     );
 }
 
-const miniGameCanvas: React.FC = () => {
+const MiniGameCanvas: React.FC = () => {
     const [score, setScore] = useState(0);
     const [gameOver, setGameOver] = useState(false);
 
@@ -137,4 +137,4 @@ const miniGameCanvas: React.FC = () => {
     );
 };
 
-export default miniGameCanvas;
+export default MiniGameCanvas;

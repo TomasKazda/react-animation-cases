@@ -17,6 +17,7 @@ const Closure: React.FC = () => {
     let value1 = counter1();
 
     const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+        e.preventDefault();
         value1 = counter1();
         setValue2(counter2());
     }
